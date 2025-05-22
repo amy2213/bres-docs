@@ -1,0 +1,13 @@
+site_name: Binary Ritual Encoding System
+repo_url: https://github.com/yourusername/bres
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - System Overview: system_overview.md
+  - Phase Assignment: phase_assignment.md
+  - Feature Extraction: feature_extraction.md
+  - Classification: classification.md
+  - Interpretation: interpretation.md
+  - Developer Guide: developer_guide.md
+  - References: references.md
