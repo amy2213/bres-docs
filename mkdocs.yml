@@ -5,9 +5,12 @@ theme:
 nav:
   - Home: index.md
   - System Overview: system_overview.md
-  - Phase Assignment: phase_assignment.md
-  - Feature Extraction: feature_extraction.md
   - Classification: classification.md
+  - Feature Extraction: feature_extraction.md
+  - Phase Assignment: phase_assignment.md
   - Interpretation: interpretation.md
   - Developer Guide: developer_guide.md
   - References: references.md
+  - Architecture: architecture.md
+  - Workflow Examples: workflow_examples.md
+  - Use Cases: use_cases.md
