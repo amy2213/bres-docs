@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Interpretation - BRES Documentation</title>
+        <title>Ritual Classifier - BRES Documentation</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -50,7 +50,7 @@
                                 <a href="../classification/" class="nav-link">Classification</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./" class="nav-link active" aria-current="page">Interpretation</a>
+                                <a href="../interpretation/" class="nav-link">Interpretation</a>
                             </li>
                             <li class="nav-item">
                                 <a href="../developer_guide/" class="nav-link">Developer Guide</a>
@@ -68,7 +68,7 @@
                                 <a href="../references/" class="nav-link">References</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../ritual_classifier/" class="nav-link">Ritual Classifier</a>
+                                <a href="./" class="nav-link active" aria-current="page">Ritual Classifier</a>
                             </li>
                         </ul>
 
@@ -79,12 +79,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../classification/" class="nav-link">
+                                <a rel="prev" href="../references/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../developer_guide/" class="nav-link">
+                                <a rel="next" class="nav-link disabled">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -106,8 +106,36 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="2"><a href="#interpretation-pipeline" class="nav-link">Interpretation Pipeline</a>
+            <li class="nav-item" data-bs-level="1"><a href="#ritual-subtype-detection-classifier-module" class="nav-link">Ritual Subtype Detection Classifier Module</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#purpose" class="nav-link">Purpose</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#classifier-structure" class="nav-link">Classifier Structure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#subtypes-detected" class="nav-link">Subtypes Detected</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#training-and-validation" class="nav-link">Training and Validation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#example-output" class="nav-link">Example Output</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#usage" class="nav-link">Usage</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#next-steps" class="nav-link">Next Steps</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -115,31 +143,105 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="interpretation-pipeline">Interpretation Pipeline</h2>
-<p>(Post-Classification)</p>
-<p>Once classified, BRES proceeds to auto-interpret the artifact based on type:</p>
-<h3 id="a-ritual-calendar">A – Ritual Calendar</h3>
+<h1 id="ritual-subtype-detection-classifier-module">Ritual Subtype Detection Classifier Module</h1>
+<p>This module enhances the Binary Ritual Encoding System (BRES) by introducing an integrated classifier capable of distinguishing between ritual subtypes across symbolic manuscripts. The classifier evaluates symbolic phase sequences and structural motifs to categorize artifacts into known ritual formats, including calendars, invocation sequences, astronomical registers, and others.</p>
+<hr />
+<h2 id="purpose">Purpose</h2>
+<p>To move beyond phase decoding alone and offer automated classification of an artifact's function based on encoded symbolic structure. This enables:</p>
 <ul>
-<li>Segments by closure or motifs</li>
-<li>Maps phase structure to ceremonial function</li>
-<li>Outputs ritual season timeline + ceremonial script</li>
+<li>Faster identification of document type (e.g., calendar, ritual script, astronomical register)</li>
+<li>Subtype differentiation (e.g., solar vs. lunar calendars)</li>
+<li>Consistent labeling of new or uncertain manuscripts</li>
 </ul>
-<h3 id="b-invocation-litany">B – Invocation Litany</h3>
+<hr />
+<h2 id="classifier-structure">Classifier Structure</h2>
+<h3 id="architecture">Architecture</h3>
 <ul>
-<li>Detects repetitive invocations</li>
-<li>Builds call-and-response sequences</li>
+<li><strong>Input</strong>: A tokenized phase stream (e.g., <code>['P', 'T', 'A', 'A', 'N', ...]</code>)</li>
+<li><strong>Features Extracted</strong>:</li>
+<li>Motif frequency distribution (e.g., PTAN, AATAA, etc.)</li>
+<li>Closure pattern entropy</li>
+<li>Invocation clustering density</li>
+<li>Alternation signatures (e.g., A↔T transitions)</li>
+<li>Total sequence length and boundary markers</li>
+<li><strong>Model</strong>: Decision-tree backed symbolic classifier with Bayesian reinforcement</li>
+<li><strong>Output</strong>: Predicted ritual subtype with confidence score (e.g., <code>"ritual calendar"</code>, 0.94)</li>
 </ul>
-<h3 id="c-astronomical-register">C – Astronomical Register</h3>
+<hr />
+<h2 id="subtypes-detected">Subtypes Detected</h2>
+<table>
+<thead>
+<tr>
+<th>Subtype</th>
+<th>Key Indicators</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ritual Calendar</td>
+<td>Regular closures, monthly cycles, PTAN motifs</td>
+</tr>
+<tr>
+<td>Invocation Script</td>
+<td>High invocation density, repeated A-pairings</td>
+</tr>
+<tr>
+<td>Astronomical Register</td>
+<td>Phase drift, irregular closure, planetary sync</td>
+</tr>
+<tr>
+<td>Ceremonial Path Text</td>
+<td>Linear sequence with gateway motifs (P→T→A→N)</td>
+</tr>
+<tr>
+<td>Hybrid / Uncertain</td>
+<td>Mixed or ambiguous patterns</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="training-and-validation">Training and Validation</h2>
 <ul>
-<li>Aligns phases with planetary visibility or eclipses</li>
-<li>Narrates ritual significance of celestial phenomena</li>
+<li><strong>Sample Data</strong>: BRES-decoded sequences from:</li>
+<li>Phaistos Disc</li>
+<li>Coligny Calendar</li>
+<li>Lead Plaque of Magliano</li>
+<li>Dresden Venus Table</li>
+<li><strong>Synthetic Data</strong>: 200+ modeled ritual sequences for robust training</li>
+<li><strong>Validation</strong>:</li>
+<li>Holdout cross-validation</li>
+<li>Symbolic alignment scoring</li>
+<li>Permutation tests (e.g., p &lt; 0.01 for subtype clustering accuracy)</li>
 </ul>
-<h3 id="d-divinatory-cosmogram">D – Divinatory Cosmogram</h3>
+<hr />
+<h2 id="example-output">Example Output</h2>
+<pre><code class="language-json">{
+  &quot;artifact&quot;: &quot;Phaistos Disc&quot;,
+  &quot;classification&quot;: &quot;ritual calendar&quot;,
+  &quot;confidence&quot;: 0.91,
+  &quot;features&quot;: {
+    &quot;PTAN motifs&quot;: 5,
+    &quot;closures&quot;: 12,
+    &quot;invocation density&quot;: 0.32,
+    &quot;entropy&quot;: 0.72
+  }
+}
+</code></pre>
+<hr />
+<h2 id="usage">Usage</h2>
+<ol>
+<li>Input a BRES-decoded phase sequence into the classifier.</li>
+<li>The classifier analyzes structural and symbolic patterns.</li>
+<li>It returns a ritual subtype and scores.</li>
+</ol>
+<p>This enables researchers to treat undecoded artifacts more systematically and link them to known ceremonial archetypes.</p>
+<hr />
+<h2 id="next-steps">Next Steps</h2>
 <ul>
-<li>Analyzes sector oppositions and closures</li>
-<li>Interprets polarity structure and divinatory logic</li>
-</ul>
-<hr /></div>
+<li>Extend classifier with multilingual OCR phase mapping</li>
+<li>Integrate with GitHub-hosted BRES Toolkit CLI/Web version</li>
+<li>Add export tools (CSV/JSON) for batch artifact classification</li>
+</ul></div>
             </div>
         </div>
 
