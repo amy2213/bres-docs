@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Phase Assignment - BRES Documentation</title>
+        <title>Sector Data (Full Table) - BRES Documentation</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -41,7 +41,7 @@
                                 <a href="../system_overview/" class="nav-link">System Overview</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./" class="nav-link active" aria-current="page">Phase Assignment</a>
+                                <a href="../phase_assignment/" class="nav-link">Phase Assignment</a>
                             </li>
                             <li class="nav-item">
                                 <a href="../feature_extraction/" class="nav-link">Feature Extraction</a>
@@ -59,7 +59,7 @@
                                 <a href="../references/" class="nav-link">References</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Tables</a>
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Tables</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
@@ -71,7 +71,7 @@
 </li>
                                     
 <li>
-    <a href="../sector_data/" class="dropdown-item">Sector Data (Full Table)</a>
+    <a href="./" class="dropdown-item active" aria-current="page">Sector Data (Full Table)</a>
 </li>
                                 </ul>
                             </li>
@@ -93,12 +93,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../system_overview/" class="nav-link">
+                                <a rel="prev" href="../references/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../feature_extraction/" class="nav-link">
+                                <a rel="next" href="../use_cases/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -120,12 +120,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="2"><a href="#bres-phase-grammar" class="nav-link">BRES Phase Grammar</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-bs-level="2"><a href="#glyph-to-phase-assignment" class="nav-link">Glyph-to-Phase Assignment</a>
+            <li class="nav-item" data-bs-level="1"><a href="#phaistos-disc-sector-metadata-table" class="nav-link">Phaistos Disc – Sector Metadata Table</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -134,47 +129,67 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="bres-phase-grammar">BRES Phase Grammar</h2>
+<p>sector_data.md</p>
+<h1 id="phaistos-disc-sector-metadata-table">Phaistos Disc – Sector Metadata Table</h1>
+<p>This table contains complete metadata for each of the 61 sectors inscribed on the Phaistos Disc. It includes raw glyph sequences, BRES phase classifications, and inferred ritual templates and structural functions.</p>
+<p><strong>Download CSV:</strong> <a href="data/Phaistos_Disc_Sector_Metadata_Table.csv">Phaistos_Disc_Sector_Metadata_Table.csv</a></p>
 <table>
 <thead>
 <tr>
-<th>Phase</th>
-<th>Symbol</th>
-<th>Ritual Function</th>
+<th>Sector</th>
+<th>Side</th>
+<th>Glyphs</th>
+<th>BRES Phases</th>
+<th>Ritual Template</th>
+<th>Structural Role</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Passive</td>
-<td>P</td>
-<td>Grounding, purification, fertility</td>
-</tr>
-<tr>
-<td>Transitional</td>
-<td>T</td>
-<td>Threshold crossing, transformation</td>
-</tr>
-<tr>
-<td>Active</td>
+<td>A1</td>
 <td>A</td>
-<td>Invocation, offering, sacrifice</td>
+<td>02 12 38</td>
+<td>A A N</td>
+<td>AAN</td>
+<td>Invocation</td>
 </tr>
 <tr>
-<td>Neutral</td>
-<td>N</td>
-<td>Closure, silence, sealing</td>
+<td>A2</td>
+<td>A</td>
+<td>01 03 09 17</td>
+<td>A A P N</td>
+<td>AAPN</td>
+<td>Threshold</td>
+</tr>
+<tr>
+<td>A3</td>
+<td>A</td>
+<td>20 21 28</td>
+<td>A T T</td>
+<td>ATT</td>
+<td>Transition</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<td>B30</td>
+<td>B</td>
+<td>04 08 11 38</td>
+<td>P T A N</td>
+<td>PTAN</td>
+<td>Closure</td>
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="glyph-to-phase-assignment">Glyph-to-Phase Assignment</h2>
-<p>Assignments are based on:
-- Iconographic and mythological parallels
-- Phase motif clustering
-- Cross-cultural ritual role alignment</p>
-<h3 id="probabilistic-assignments">Probabilistic Assignments:</h3>
-<p>Glyphs may map to multiple phases with confidence levels (e.g., 01 → A: 0.8, T: 0.2). These are used for smoother, more nuanced classification.</p>
-<hr /></div>
+<blockquote>
+<p><em>This metadata forms the basis of all classifier training and ritual grammar modeling in the BRES method.</em></p>
+</blockquote></div>
             </div>
         </div>
 
