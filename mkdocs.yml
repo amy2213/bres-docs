@@ -16,3 +16,12 @@ nav:
       - Use Cases: use_cases.md
       - References: references.md
       - Workflow Examples: workflow_examples.md
+- Technical Overview:
+    - BRES Overview: BRES Technical Documentation.md
+    - Phaistos Classification: Phaistos Disc BRES Classification.md
+    - Architecture: architecture.md
+    - Classification Logic: classification.md
+    - Developer Guide: developer_guide.md
+    - Interpretation Guide: interpretation.md
+    - System Overview: system_overview.md
+
