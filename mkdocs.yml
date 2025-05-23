@@ -1,0 +1,25 @@
+
+site_name: Phaistos BRES Project
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: indigo
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+nav:
+  - Home: index.md
+  - Data Tables:
+      - Glyph Table: glyph_table.md
+      - Sector Data: sector_data.md
+      - Full Classification: Phaistos_BRES_Table.md
+  - System Design:
+      - Classifier: ritual_classifier.md
+      - Feature Extraction: feature_extraction.md
+      - Phase Assignment: phase_assignment.md
+  - Documentation:
+      - Use Cases: use_cases.md
+      - References: references.md
+      - Workflow Examples: workflow_examples.md

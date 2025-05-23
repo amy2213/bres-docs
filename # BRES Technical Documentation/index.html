@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Workflow Examples - BRES Documentation</title>
+        <title>BRES Technical Documentation - BRES Documentation</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -82,7 +82,7 @@
                                 <a href="../architecture/" class="nav-link">Architecture</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./" class="nav-link active" aria-current="page">Workflow Examples</a>
+                                <a href="../workflow_examples/" class="nav-link">Workflow Examples</a>
                             </li>
                         </ul>
 
@@ -92,16 +92,6 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li class="nav-item">
-                                <a rel="prev" href="../architecture/" class="nav-link">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" class="nav-link disabled">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
                     </ul>
                 </div>
             </div>
@@ -120,21 +110,9 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#workflow-examples" class="nav-link">Workflow Examples</a>
+            <li class="nav-item" data-bs-level="1"><a href="#bres-technical-documentation" class="nav-link">BRES Technical Documentation</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#example-1-single-sector-phase-interpretation" class="nav-link">🔁 Example 1: Single Sector Phase Interpretation</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#example-2-pattern-comparison-between-sectors" class="nav-link">🔁 Example 2: Pattern Comparison Between Sectors</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#example-3-closure-detection" class="nav-link">🔁 Example 3: Closure Detection</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#suggested-workflow-for-researchers" class="nav-link">📐 Suggested Workflow for Researchers</a>
+            <li class="nav-item" data-bs-level="2"><a href="#ritual-subtype-classifier-module-2025-update" class="nav-link">Ritual Subtype Classifier Module (2025 Update)</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -145,61 +123,174 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="workflow-examples">Workflow Examples</h1>
-<p>These examples illustrate how to decode and analyze Phaistos Disc sectors using the Binary Ritual Encoding System (BRES).</p>
+<h1 id="bres-technical-documentation">BRES Technical Documentation</h1>
+<h2 id="ritual-subtype-classifier-module-2025-update">Ritual Subtype Classifier Module (2025 Update)</h2>
 <hr />
-<h2 id="example-1-single-sector-phase-interpretation">🔁 Example 1: Single Sector Phase Interpretation</h2>
-<h3 id="sector-a5">Sector A5</h3>
-<ul>
-<li><strong>Glyphs</strong>: 2 (Shield), 12 (Man Walking), 4 (Captive), 40 (Ox Back), 33 (Duck/Goose)</li>
-<li><strong>Phase Sequence</strong>: <code>N,A,T,T,P</code></li>
-</ul>
-<h3 id="analysis">Analysis:</h3>
-<ul>
-<li><strong>N (Shield)</strong>: Ritual begins with a closure or boundary marker.</li>
-<li><strong>A (Man Walking)</strong>: Action or invocation enters.</li>
-<li><strong>T (Captive, Ox Back)</strong>: Transitional phase invoking restraint and strength.</li>
-<li><strong>P (Goose)</strong>: Culminates in a fertility offering.</li>
-</ul>
-<blockquote>
-<p>This structure aligns with ceremonial combat or sacrificial rites leading to renewal.</p>
-</blockquote>
+<h3 id="overview"><strong>Overview</strong></h3>
+<p><strong>Name:</strong> BRES Ritual Subtype Classifier<br />
+<strong>Purpose:</strong> Automatically detect symbolic ritual encodings in undeciphered manuscripts or artifacts and classify them into culturally grounded ritual subtypes.</p>
 <hr />
-<h2 id="example-2-pattern-comparison-between-sectors">🔁 Example 2: Pattern Comparison Between Sectors</h2>
-<h3 id="sectors-a14-and-a20">Sectors A14 and A20</h3>
-<ul>
-<li><strong>Common Phase Template</strong>: <code>N,T,T,A,A,P</code></li>
-<li><strong>Ritual Roles</strong>:</li>
-<li><strong>T (Hide, Ship)</strong>: Preparation and journey</li>
-<li><strong>A (Arrow, Chisel)</strong>: Enactment and creation</li>
-<li><strong>P (Flower)</strong>: Renewal</li>
-</ul>
-<h3 id="inference">Inference:</h3>
-<p>Multiple sectors encode a <strong>journey-action-renewal</strong> structure, indicating shared ritual function across phases.</p>
+<h3 id="supported-ritual-subtypes"><strong>Supported Ritual Subtypes</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Subtype Code</th>
+<th>Ritual Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RC</code></td>
+<td>Ritual Calendar</td>
+<td>Cyclical grammars using phase sequences (e.g., PTAN) with closure logic</td>
+</tr>
+<tr>
+<td><code>AR</code></td>
+<td>Astronomical Register</td>
+<td>Symbolic records of celestial cycles (e.g., Venus Table)</td>
+</tr>
+<tr>
+<td><code>IP</code></td>
+<td>Invocation Protocol</td>
+<td>Compact invocation clusters or symbolic spells</td>
+</tr>
+<tr>
+<td><code>CH</code></td>
+<td>Ceremonial Handbook</td>
+<td>Modular instructions or ritual guides with flexible order</td>
+</tr>
+<tr>
+<td><code>MC</code></td>
+<td>Mixed Calendar</td>
+<td>Hybrid astronomical and ritual-symbolic grammars</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h2 id="example-3-closure-detection">🔁 Example 3: Closure Detection</h2>
-<h3 id="sector-a1">Sector A1</h3>
-<ul>
-<li><strong>Phase Sequence</strong>: <code>N,A,A,A,P</code></li>
-</ul>
-<h3 id="key-features">Key Features:</h3>
-<ul>
-<li>Starts with <code>N</code> (Shield), ends in <code>P</code> (Flower)</li>
-<li>Strong invocation cluster (3x A)</li>
-</ul>
-<blockquote>
-<p>Represents an open invocation sequence concluding in renewal—ideal template for a <strong>petition-based</strong> ritual.</p>
-</blockquote>
+<h3 id="feature-extraction-and-input-dimensions"><strong>Feature Extraction and Input Dimensions</strong></h3>
+<p>The classifier uses the following core feature vectors per artifact:</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>motif_density</code></td>
+<td>Percentage of sector-aligned ritual motifs (e.g., PTAN, AATAAN)</td>
+</tr>
+<tr>
+<td><code>closure_rate</code></td>
+<td>Presence and distribution of Neutral-phase closures</td>
+</tr>
+<tr>
+<td><code>symbolic_entropy</code></td>
+<td>Shannon entropy of phase transitions</td>
+</tr>
+<tr>
+<td><code>invocation_density</code></td>
+<td>Frequency of invocation-like sequences (e.g., A→T, A→A, A→P)</td>
+</tr>
+<tr>
+<td><code>alternation_rhythm</code></td>
+<td>Patterning of phase alternations (e.g., A→T→N cycles)</td>
+</tr>
+<tr>
+<td><code>calendar_fit_score</code></td>
+<td>Match to known calendrical formats (e.g., lunar, 36-day symbolic, Venus)</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h2 id="suggested-workflow-for-researchers">📐 Suggested Workflow for Researchers</h2>
+<h3 id="classification-algorithm"><strong>Classification Algorithm</strong></h3>
+<p>The classifier uses a decision-tree with rule-based thresholds derived from validated datasets:</p>
+<ul>
+<li>If <code>motif_density + closure_rate &gt; 1.5</code> and <code>entropy &lt; 2.5</code> → classify as <code>RC</code></li>
+<li>If <code>alternation_rhythm</code> aligns with astronomical period → classify as <code>AR</code></li>
+<li>If <code>invocation_density &gt; 0.6</code> and sectors &lt; 15 → classify as <code>IP</code></li>
+<li>If <code>entropy &gt; 3.5</code> and <code>motif reuse</code> is high → classify as <code>CH</code></li>
+<li>If multiple high scores across categories → classify as <code>MC</code></li>
+</ul>
+<hr />
+<h3 id="classifier-output-example"><strong>Classifier Output Example</strong></h3>
+<pre><code class="language-json">{
+  &quot;type&quot;: &quot;RC&quot;,
+  &quot;confidence&quot;: 0.93,
+  &quot;motif_match_score&quot;: 0.91,
+  &quot;calendar_alignment&quot;: &quot;36-sector symbolic wheel&quot;,
+  &quot;closure_density&quot;: 0.23,
+  &quot;entropy&quot;: 2.1
+}
+</code></pre>
+<hr />
+<h3 id="classifier-validation"><strong>Classifier Validation</strong></h3>
+<p>Artifacts used for classifier training and validation:</p>
+<table>
+<thead>
+<tr>
+<th>Artifact</th>
+<th>Source / Notes</th>
+<th>Subtype</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Phaistos Disc</td>
+<td>Phase-tested, PTAN motifs, closure logic, 36-sector ring</td>
+<td>RC</td>
+</tr>
+<tr>
+<td>Dresden Codex Venus Tbl</td>
+<td>Confirmed celestial period alignment</td>
+<td>AR</td>
+</tr>
+<tr>
+<td>Lead Plaque of Magliano</td>
+<td>Invocation-led cluster with strong closure boundary</td>
+<td>IP</td>
+</tr>
+<tr>
+<td>Book of Soyga (table 17)</td>
+<td>Entropic modularity, functional symbol recurrence</td>
+<td>CH</td>
+</tr>
+<tr>
+<td>Coligny Calendar</td>
+<td>Dual lunar/ritual hybrid logic with sectoral markers</td>
+<td>MC</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="developer-notes"><strong>Developer Notes</strong></h3>
+<ul>
+<li>Source code for classification logic is in <code>classifier.py</code></li>
+<li>Dataset folder includes: <code>sector_phase_streams/</code>, <code>motif_reference.json</code>, <code>entropy_scores.csv</code></li>
+<li>To retrain or extend to a new ritual subtype, add sample artifacts to <code>training/</code> and rerun <code>subtype_classifier_train.py</code></li>
+</ul>
+<hr />
+<h3 id="deployment-guide"><strong>Deployment Guide</strong></h3>
+<p>To publish this classifier as part of the GitHub Pages documentation:</p>
 <ol>
-<li><strong>Select Sector</strong>: Choose a sector from the full classification.</li>
-<li><strong>Extract Phase Sequence</strong>: Read and decode BRES sequence (e.g. <code>T,P,A,N</code>)</li>
-<li><strong>Interpret Transition Logic</strong>: Map each phase to symbolic ritual function.</li>
-<li><strong>Compare Across Sectors</strong>: Identify recurring templates or divergences.</li>
-<li><strong>Document Inference</strong>: Align with cultural parallels and hypothesize purpose.</li>
+<li>Ensure <code>mkdocs.yml</code> includes a new page:</li>
 </ol>
-<p>Use this method to build comparative ritual maps and decode ceremonial narratives.</p></div>
+<pre><code class="language-yaml">  - Classification:
+      - 'Ritual Subtypes': 'docs/subtypes.md'
+</code></pre>
+<ol>
+<li>Place this markdown in <code>docs/subtypes.md</code></li>
+<li>Commit changes:</li>
+</ol>
+<pre><code class="language-bash">git add docs/subtypes.md mkdocs.yml
+git commit -m &quot;Add ritual subtype classifier documentation&quot;
+git push origin main
+mkdocs gh-deploy
+</code></pre>
+<hr />
+<p>For help replicating this classifier, see the <a href="../developer_guide/">Developer Guide</a>.</p></div>
             </div>
         </div>
 
