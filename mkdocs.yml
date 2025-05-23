@@ -1,27 +1,19 @@
 site_name: Phaistos BRES Project
 theme:
   name: material
+
 nav:
-  - Home: index.md
   - Introduction: introduction.md
+  - Home: index.md
   - Data Tables:
       - Glyph Table: glyph_table.md
       - Sector Data: sector_data.md
       - Full Classification: Phaistos_BRES_Table.md
   - System Design:
       - Classifier: ritual_classifier.md
-      - Feature Extraction: feature_extracton.md
+      - Feature Extraction: feature_extraction.md
       - Phase Assignment: phase_assignment.md
   - Documentation:
       - Use Cases: use_cases.md
       - References: references.md
       - Workflow Examples: workflow_examples.md
-  - Technical Appendix:
-      - BRES Technical Documentation: BRES Technical Documentation.md
-      - Phaistos Disc Classification: Phaistos Disc BRES Classification.md
-      - Architecture: architecture.md
-      - Classification Logic: classification.md
-      - Developer Guide: developer_guide.md
-      - Interpretation Guide: interpretation.md
-      - System Overview: system_overview.md
-
