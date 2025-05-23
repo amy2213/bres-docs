@@ -1,8 +1,8 @@
 site_name: Phaistos BRES Project
 theme:
   name: material
-
 nav:
+  - Introduction: introduction.md
   - Home: index.md
   - Data Tables:
       - Glyph Table: glyph_table.md
